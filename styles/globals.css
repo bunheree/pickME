@@ -27,9 +27,28 @@ a {
   background-size: contain;
 }
 
-.btn-start {
+.bg-home.bg-main {
+  background-image: url("../public/main.png");
+}
+
+.bg-home.bg-main.bg-game {
+  background-image: url("../public/bg-game.png");
+}
+
+
+.btn-home {
   top: 25%;
   left: 60%;
+}
+
+.btn-back {
+  top: 5%;
+  right: 10%;
+}
+
+.btn-start {
+  top: 35%;
+  left: 47%;
 }
 
 .dosis-font {
@@ -47,7 +66,7 @@ a {
 }
 
 @media screen and (max-width: 767px) {
-  .bg-home {
+  .bg-home-mobile {
     background-image: url("../public/Pickme.png");
   }
   .btn-start {
