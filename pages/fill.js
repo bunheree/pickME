@@ -47,7 +47,7 @@ export default function Fill() {
                                 <input id="name"
                                     name="name"
                                     required
-                                    class={(error ? 'border-rose-600' : '') + ` shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                    className={(error ? 'border-rose-600' : '') + ` shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                                     type="text"
                                     placeholder="Tên" />
                             </div>
@@ -55,14 +55,14 @@ export default function Fill() {
                                 <input id="phone"
                                     name="phone"
                                     required
-                                    class={(error ? 'border-rose-600' : '') + ` shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                    className={(error ? 'border-rose-600' : '') + ` shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                                     placeholder="Số điện thoại" />
                                 <p className={`text-sm text-rose-800 py-2 ` + (error ? '' : 'hidden')}>
                                     {errorText}
                                 </p>
                             </div>
-                            <div class="flex items-center justify-center">
-                                <button class="border rounded p-2 bg-red-600 hover:text-red-900 font-mono focus:outline-none focus:shadow-outline"
+                            <div className="flex items-center justify-center">
+                                <button className="border rounded p-2 bg-red-600 hover:text-red-900 font-mono focus:outline-none focus:shadow-outline"
                                     onClick={handleClick}
                                     type="submit">
                                     Tham Gia

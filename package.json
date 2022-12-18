@@ -1,5 +1,5 @@
 {
-  "name": "nextjs",
+  "name": "pick-me",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,15 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.2.1",
+    "@mdx-js/react": "^2.2.1",
+    "@next/bundle-analyzer": "^13.0.7",
+    "@next/mdx": "^13.0.7",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.6",
+    "fs-json-store": "^8.0.1",
     "next": "13.0.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "write-json-file": "^5.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4"
+  },
+  "browser": {
+    "crypto": false,
+    "fs": false,
+    "path": false,
+    "os": false,
+    "net": false,
+    "stream": false,
+    "tls": false
   }
 }
