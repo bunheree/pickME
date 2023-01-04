@@ -24,10 +24,11 @@ export default function Admin() {
                 onClick={() => handleClick('/random')}>
                 Random
             </button>
-            <button className="border rounded p-3 bg-purple-600 hover:text-purple-900 hover:bg-white font-mono m-3 w-40"
-                onClick={() => handleClick('/list')}>
+            <a href='https://docs.google.com/spreadsheets/d/1-6iugU-V9UrO7EDkVt-5x21LN5HeYAzHWgSku9Yy3TA/edit?usp=sharing'  
+                target="_blank"
+                className="border text-center rounded p-3 bg-purple-600 hover:text-purple-900 hover:bg-white font-mono m-3 w-40">
                 Manage List
-            </button>
+            </a>
         </div>
     )
 }

@@ -13,18 +13,22 @@
     "@mdx-js/react": "^2.2.1",
     "@next/bundle-analyzer": "^13.0.7",
     "@next/mdx": "^13.0.7",
+    "browserify-fs": "^1.0.0",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.6",
     "fs-json-store": "^8.0.1",
+    "googleapis": "^110.0.0",
     "next": "13.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "write-json-file": "^5.0.0"
   },
   "devDependencies": {
+    "@types/node": "18.11.18",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "typescript": "4.9.4"
   },
   "browser": {
     "crypto": false,

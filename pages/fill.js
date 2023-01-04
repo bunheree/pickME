@@ -4,8 +4,10 @@ export default function Fill() {
     const [error, setError] = useState(false)
     const [errorText, setErrorText] = useState('Số điện thoại không hợp lệ!!!')
     const [success, setSuccess] = useState(false)
+    const [dname, setDname] = useState('')
+    const [dphone, setDphone] = useState('')
 
-    const handleClick = (e) => {
+    const handleClick = async(e) => {
         e.preventDefault()
         const name = document.querySelector('#name').value
         const phone = document.querySelector('#phone').value
@@ -28,7 +30,22 @@ export default function Fill() {
             return false
         }
 
+        const form = {
+            name,
+            phone
+        }
+        const response = await fetch('/api/submit', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form)
+        })
+        const content = await response.json()
+        console.log(content)
         setSuccess(true)
+        
     }
 
     return (
@@ -41,9 +58,9 @@ export default function Fill() {
                         <span className='text-lime-400'>Lưu ý:</span> Sđt chỉ hợp lệ khi gọi và được bắt máy ngay tại hội trường!!!
                     </p>
 
-                    <div class="w-full max-w-xs m-auto mt-4">
-                        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                            <div class="mb-4">
+                    <div className="w-full max-w-xs m-auto mt-4">
+                        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                            <div className="mb-4">
                                 <input id="name"
                                     name="name"
                                     required
@@ -51,7 +68,7 @@ export default function Fill() {
                                     type="text"
                                     placeholder="Tên" />
                             </div>
-                            <div class="mb-6">
+                            <div className="mb-6">
                                 <input id="phone"
                                     name="phone"
                                     required
@@ -69,7 +86,7 @@ export default function Fill() {
                                 </button>
                             </div>
                         </form>
-                        <p class="text-center text-gray-500 text-xs">
+                        <p className="text-center text-gray-500 text-xs">
                             &copy;2022 Emma.
                         </p>
                     </div>
