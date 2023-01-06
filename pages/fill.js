@@ -93,8 +93,8 @@ export default function Fill() {
                 <>
                     {!success ?
                         <>
-                            <p className="title-text dosis-font text-center text-lg py-2">
-                                <span className='text-purple-400'>Lưu ý:</span> Chúng tôi sẽ xác thực số điện thoại bằng cách gọi trực tiếp vào số bạn đã đăng ký, <br/>nếu không liên lạc được hoặc người nhấc máy không phải chính bạn (người có mặt tại đây), <br/>xem như không hợp lệ.
+                            <p className="title-text dosis-font text-center text-lg p-2">
+                                <span className='text-purple-400'>Lưu ý:</span> Chúng tôi sẽ xác thực số điện thoại bằng cách gọi trực tiếp vào số bạn đã đăng ký, nếu không liên lạc được hoặc người nhấc máy không phải chính bạn (người có mặt tại đây), xem như không hợp lệ.
                             </p>
 
                             <div className="w-full max-w-xs m-auto mt-4">

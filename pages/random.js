@@ -110,7 +110,7 @@ export default function Random() {
 
             {showLabel &&
                 <div className='bg-winner winner-alert text-2xl winner-font' onClick={() => setShowLabel(false)}>
-                    {data[index][0]}
+                    <span className='text-name'>{data[index][0]}</span>
                     <br />
                     {data[index][1]}
                 </div>

@@ -136,6 +136,10 @@ a {
   font-family: 'Sofia';
 }
 
+.text-name {
+  font-size: 56px;
+}
+
 .loader {
   position: absolute;
   top: 40%;
