@@ -4,13 +4,13 @@ export default function Fill() {
     const [error, setError] = useState(false)
     const [errorText, setErrorText] = useState('Số điện thoại không hợp lệ!!!')
     const [success, setSuccess] = useState(false)
-    const [dname, setDname] = useState('')
-    const [dphone, setDphone] = useState('')
+    const [disableBtn, setDisableBtn] = useState(false)
 
     const handleClick = async(e) => {
         e.preventDefault()
         const name = document.querySelector('#name').value
         const phone = document.querySelector('#phone').value
+        const status = 1
 
         if (!name) {
             setErrorText('Quên nhập TÊN rồi kìa!')
@@ -29,10 +29,13 @@ export default function Fill() {
             setError(true)
             return false
         }
+        setError(false)
+        setDisableBtn(true)
 
         const form = {
             name,
-            phone
+            phone,
+            status
         }
         const response = await fetch('/api/submit', {
             method: 'POST',
@@ -79,8 +82,9 @@ export default function Fill() {
                                 </p>
                             </div>
                             <div className="flex items-center justify-center">
-                                <button className="border rounded p-2 bg-red-600 hover:text-red-900 font-mono focus:outline-none focus:shadow-outline"
+                                <button className={`border rounded p-2 bg-red-600 hover:text-red-900 font-mono focus:outline-none focus:shadow-outline ${disableBtn ? 'opacity-50' : ''}`}
                                     onClick={handleClick}
+                                    disabled={disableBtn}
                                     type="submit">
                                     Tham Gia
                                 </button>

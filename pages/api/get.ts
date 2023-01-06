@@ -1,22 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { google } from 'googleapis'
 
-type SheetForm = {
-    name: string
-    phone: string
-    status: number
-}
-
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
-    if (req.method !== 'POST') {
-        return res.status(405).send({ message: 'Only POST request are allowed' })
-    }
-
-    const body = req.body as SheetForm
-
     try {
         // prepare auth
         const auth = new google.auth.GoogleAuth({
@@ -36,15 +24,9 @@ export default async function handler(
             version: 'v4'
         })
 
-        const response = await sheets.spreadsheets.values.append({
+        const response = await sheets.spreadsheets.values.get({
             spreadsheetId: process.env.GOOGLE_SHEET_ID,
-            range: 'A1:B1',
-            valueInputOption: 'USER_ENTERED',
-            requestBody: {
-                values: [
-                    [body.name, body.phone, body.status]
-                ]
-            }
+            range: 'A:C',
         })
 
         return res.status(200).json({
