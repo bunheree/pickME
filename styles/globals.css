@@ -2,13 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --yellow-color: #FDE3AC;
+  --dark-yellow-color: #DF964A;
+  --red-color: #94221E;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #c48b7a;
-  color: rgb(231, 231, 231);
+  background-color: var(--yellow-color);
+  color: var(--red-color);
 }
 
 a {
@@ -18,6 +24,26 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.bg-yellow {
+  background-color: var(--yellow-color);
+}
+
+.bg-red {
+  background-color: var(--red-color);
+}
+
+.txt-yellow {
+  color: var(--yellow-color);
+}
+
+.txt-red {
+  color: var(--red-color);
+}
+
+.txt-dark-yellow {
+  color: var(--dark-yellow-color);
 }
 
 .bg-home {
@@ -39,7 +65,7 @@ a {
 
 .btn-home {
   top: 25%;
-  left: 60%;
+  left: 46.6%;
 }
 
 .btn-back {
@@ -48,8 +74,8 @@ a {
 }
 
 .btn-start {
-  top: 35%;
-  left: 47%;
+  top: 31%;
+  left: 46%;
 }
 
 .dosis-font {
@@ -158,5 +184,10 @@ a {
   .btn-start {
     top: 25%;
     left: 41.5%;
+  }
+
+  .btn-home {
+    top: 15%;
+    left: 39.6%;
   }
 }

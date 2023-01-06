@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="bg-home bg-home-mobile">
-      <button onClick={handleClick} className="btn-home border rounded p-3 bg-red-600 hover:text-red-900 hover:bg-white font-mono title-text absolute">THAM GIA</button>
+      <button onClick={handleClick} className="btn-home border border-red-800 border-2 rounded p-3 bg-yellow-400 hover:bg-white hover:text-red-900 hover:bg-white font-mono title-text absolute">THAM GIA</button>
     </div>
   )
 }

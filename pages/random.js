@@ -43,7 +43,7 @@ export default function Random() {
     return (
         <div className={`bg-main bg-home ` + (gameState ? 'bg-game' : '') + (showLabel ? ' bg-disable' : '') + (loading ? ' bg-disable' : '')}>
             {!gameState ?
-                <button className="btn-start border rounded p-3 bg-red-600 hover:text-red-900 hover:bg-white font-mono absolute shadow-2xl text-2xl border-4 hover:border-rose-600"
+                <button className="btn-start border border-red-800 rounded p-3 bg-yellow-400 hover:text-red-900 hover:bg-white font-mono absolute shadow-2xl text-2xl border-4 hover:border-rose-600"
                     onClick={() => handleClick(!gameState)}>
                     BẮT ĐẦU
                 </button>
