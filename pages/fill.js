@@ -135,7 +135,7 @@ export default function Fill() {
                         <>
                             <img className="main-logo object-cover m-auto" src="/success.png" width="300" />
                             <p className="title-text dosis-font text-center text-2xl py-2">
-                                <span className='text-rose-800'>Hì hì:</span> Chúc mừng bạn đã tham gia thành công ^ ^
+                                <span className='text-rose-800'>Tada!!</span> Chúc mừng bạn đã tham gia thành công
                             </p>
                         </>
                     }

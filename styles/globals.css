@@ -60,11 +60,12 @@ a {
 
 .bg-home.bg-main.bg-game {
   background-image: url("../public/bg-game.png");
+  background-color: #4c4434;
 }
 
 
 .btn-home {
-  top: 25%;
+  top: 64%;
   left: 46.6%;
 }
 
@@ -74,7 +75,7 @@ a {
 }
 
 .btn-start {
-  top: 31%;
+  top: 66%;
   left: 46%;
 }
 
@@ -90,16 +91,16 @@ a {
 
 .marquee-wrapper {
   position: absolute;
-  top: 250px;
+  top: 150px;
   width: 100%;
   height: 100% - 250px;
 }
 
-/* .marquee-wrapper .marquee-item {
+.marquee-wrapper .marquee-item {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-} */
+}
 
 .bg-winner {
   background-image: url("../public/congrat.png");
@@ -109,19 +110,26 @@ a {
 }
 
 .winner-alert {
-
   width: 100%;
-  height: 300px;
+  height: 380px;
   margin: auto;
   position: absolute;
   z-index: 100;
   text-align: center;
-  padding-top: 140px;
+  padding-top: 210px;
   margin-top: 10%;
 }
 
+.btn-game-start {
+  z-index: 100;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  font-size: xx-large;
+}
+
 .bg-home.bg-main.bg-disable {
-  background-image: linear-gradient(to bottom, rgba(37, 38, 38, 0.52), rgba(105, 103, 103, 0.73)), url('../public/main.png');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(10, 10, 10, 0.73)), url('../public/main.png');
+  background-color: var(--yellow-color);
 }
 
 .winner-font {

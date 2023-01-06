@@ -25,8 +25,9 @@ export default function Random() {
         fetchData()
     }, [])
 
-    const findWinner = () => {
+    const findWinner = async () => {
         var winnerIdx = Math.floor(Math.random() * data.length)
+        var newData = []
 
         if (data[winnerIdx][2] == 0) {
             findWinner()
@@ -37,13 +38,44 @@ export default function Random() {
             setIndex(winnerIdx)
             setShowLabel(true)
             setLoading(false)
-        }, 5000);
+        }, 5000)
+
+        // Update data
+        data.forEach((item, i) => {
+            newData[i] = item
+            if (winnerIdx == i) {
+                newData[i] = [item[0], item[1], 0]
+            }
+        })
+        const response = await fetch('/api/update', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newData)
+        })
+        const content = await response.json()
+        console.log(content)
+        fetchData()
+    }
+
+    const itemElem = function (item, i) {
+        return (
+            <Marquee key={i}
+                speed={Math.floor(Math.random() * (120 - 50) + 50)}
+                className={`marquee-item text-xl ${item[2] == 0 ? 'text-green-300 underline underline-offset-4' : 'text-white'}`}
+                style={{ top: Math.floor(Math.random() * 550) }}
+                gradient={false}>
+                {item[0]}
+            </Marquee>
+        )
     }
 
     return (
         <div className={`bg-main bg-home ` + (gameState ? 'bg-game' : '') + (showLabel ? ' bg-disable' : '') + (loading ? ' bg-disable' : '')}>
             {!gameState ?
-                <button className="btn-start border border-red-800 rounded p-3 bg-yellow-400 hover:text-red-900 hover:bg-white font-mono absolute shadow-2xl text-2xl border-4 hover:border-rose-600"
+                <button className="btn-start border border-red-800 rounded p-3 bg-yellow-400 hover:text-red-800 border-4 hover:border-red-800 hover:bg-white font-mono absolute shadow-2xl text-2xl"
                     onClick={() => handleClick(!gameState)}>
                     BẮT ĐẦU
                 </button>
@@ -51,14 +83,14 @@ export default function Random() {
                 <>
                     {(!showLabel && !loading) &&
                         <>
-                            <button className="btn-back border rounded p-3 bg-red-600 hover:text-red-900 hover:bg-white font-mono absolute shadow-2xl"
+                            <button className="btn-back border border-red-800 rounded p-3 bg-yellow-400 hover:text-red-800 border-4 hover:border-red-800 hover:bg-white font-mono absolute shadow-2xl"
                                 onClick={() => handleClick(!gameState)}>
                                 BACK
                             </button>
                             <div className='btn-start-game'>
-                                <button className="border rounded p-3 bg-red-600 hover:text-red-900 hover:bg-white font-mono absolute shadow-2xl"
+                                <button className="btn-game-start border border-red-800 rounded p-3 px-8 bg-yellow-400 hover:text-red-800 border-4 hover:border-red-800 hover:bg-white font-mono absolute shadow-2xl"
                                     onClick={findWinner}>
-                                    == START ==
+                                    START
                                 </button>
                             </div>
                         </>
@@ -70,20 +102,14 @@ export default function Random() {
 
             {(gameState && data.length > 0) &&
                 <div className='marquee-wrapper'>
-                    {data.map((item, i) => (
-                        <Marquee key={i}
-                            speed={Math.floor(Math.random() * (120 - 50) + 50)}
-                            className={`marquee-item text-xl ${item[2] == 0 ? 'text-green-300 underline underline-offset-4' : ''}`}
-                            //style="top: 80%;"
-                            gradient={false}>
-                            {item[0]}
-                        </Marquee>
-                    ))}
+                    {data.map((item, i) => {
+                        return itemElem(item, i)
+                    })}
                 </div>
             }
 
             {showLabel &&
-                <div className='bg-winner winner-alert text-lg winner-font' onClick={() => setShowLabel(false)}>
+                <div className='bg-winner winner-alert text-2xl winner-font' onClick={() => setShowLabel(false)}>
                     {data[index][0]}
                     <br />
                     {data[index][1]}
