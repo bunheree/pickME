@@ -28,19 +28,19 @@ export default function Fill() {
         const status = 1
 
         if (!name) {
-            setErrorText('Quên nhập TÊN rồi kìa!')
+            setErrorText('Name is required!')
             setError(true)
             return false
         }
 
         if (!phone) {
-            setErrorText('Quên nhập SĐT rồi kìa!')
+            setErrorText('Phone is required!')
             setError(true)
             return false
         }
 
         if (phone.length < 10) {
-            setErrorText('Số điện thoại không hợp lệ!!!')
+            setErrorText('Phone number is not valid!!!')
             setError(true)
             return false
         }
@@ -51,7 +51,7 @@ export default function Fill() {
                 // break condition     
                 if (data[i] && data[i][1] == phone) {
                     console.log(data[i][1])
-                    setErrorText('Số điện thoại đã tham gia!')
+                    setErrorText('Joined phone number!')
                     setError(true)
                     checkPhone = 1
                     break;
@@ -94,7 +94,7 @@ export default function Fill() {
                     {!success ?
                         <>
                             <p className="title-text dosis-font text-center text-lg p-2">
-                                <span className='text-purple-400'>Lưu ý:</span> Chúng tôi sẽ xác thực số điện thoại bằng cách gọi trực tiếp vào số bạn đã đăng ký, nếu không liên lạc được hoặc người nhấc máy không phải chính bạn (người có mặt tại đây), xem như không hợp lệ.
+                                <span className='text-purple-400'>Note:</span> The phone number will be used to verify the details.
                             </p>
 
                             <div className="w-full max-w-xs m-auto mt-4">
@@ -105,28 +105,28 @@ export default function Fill() {
                                             required
                                             className={(error ? 'border-rose-600' : '') + ` shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                                             type="text"
-                                            placeholder="Tên" />
+                                            placeholder="Name" />
                                     </div>
                                     <div className="mb-6">
                                         <input id="phone"
                                             name="phone"
                                             required
                                             className={(error ? 'border-rose-600' : '') + ` shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
-                                            placeholder="Số điện thoại" />
+                                            placeholder="Phone number" />
                                         <p className={`text-sm text-rose-800 py-2 ` + (error ? '' : 'hidden')}>
                                             {errorText}
                                         </p>
                                     </div>
                                     <div className="flex items-center justify-center">
-                                        <button className={`border rounded p-2 bg-yellow-400 hover:bg-white hover:text-red-900 font-mono focus:outline-none focus:shadow-outline ${disableBtn ? 'opacity-50' : ''}`}
+                                        <button className={`border rounded p-2 bg-purple-400 hover:bg-white hover:text-purple-900 font-mono focus:outline-none focus:shadow-outline ${disableBtn ? 'opacity-50' : ''}`}
                                             onClick={handleClick}
                                             disabled={disableBtn}
                                             type="submit">
-                                            Tham Gia
+                                            Join random game
                                         </button>
                                     </div>
                                 </form>
-                                <p className="text-center text-gray-500 text-xs">
+                                <p className="text-center text-gray-200 text-xs">
                                     &copy;2022 Emma.
                                 </p>
                             </div>
@@ -135,7 +135,7 @@ export default function Fill() {
                         <>
                             <img className="main-logo object-cover m-auto" src="/success.png" width="300" />
                             <p className="title-text dosis-font text-center text-2xl py-2">
-                                <span className='text-rose-800'>Tada!!</span> Chúc mừng bạn đã tham gia thành công
+                                <span className='text-purple-200'>Tada!!</span> You have successfully joined.
                             </p>
                         </>
                     }

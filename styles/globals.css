@@ -13,8 +13,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: var(--yellow-color);
-  color: var(--red-color);
+  background-image: url("../public/bg-galaxy.png");
+  color: var(--yellow-color);
 }
 
 a {
@@ -60,12 +60,12 @@ a {
 
 .bg-home.bg-main.bg-game {
   background-image: url("../public/bg-game.png");
-  background-color: #4c4434;
+  /* background-color: #4c4434; */
 }
 
 
 .btn-home {
-  top: 64%;
+  top: 74%;
   left: 46.6%;
 }
 
@@ -75,7 +75,7 @@ a {
 }
 
 .btn-start {
-  top: 66%;
+  top: 74%;
   left: 46%;
 }
 
@@ -129,7 +129,7 @@ a {
 
 .bg-home.bg-main.bg-disable {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(10, 10, 10, 0.73)), url('../public/main.png');
-  background-color: var(--yellow-color);
+  /* background-color: var(--yellow-color); */
 }
 
 .winner-font {
@@ -189,13 +189,13 @@ a {
 }
 
 @media screen and (max-width: 767px) {
-  .bg-home-mobile {
+  /* .bg-home-mobile {
     background-image: url("../public/Pickme.png");
-  }
+  } */
 
   .btn-start {
     top: 25%;
-    left: 41.5%;
+    left: 39.6%;
   }
 
   .btn-home {

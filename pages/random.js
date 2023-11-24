@@ -75,20 +75,20 @@ export default function Random() {
     return (
         <div className={`bg-main bg-home ` + (gameState ? 'bg-game' : '') + (showLabel ? ' bg-disable' : '') + (loading ? ' bg-disable' : '')}>
             {!gameState ?
-                <button className="btn-start border border-red-800 rounded p-3 bg-yellow-400 hover:text-red-800 border-4 hover:border-red-800 hover:bg-white font-mono absolute shadow-2xl text-2xl"
+                <button className="btn-start border-purple-800 rounded p-3 bg-purple-400 hover:text-purple-800 border-4 hover:border-purple-800 hover:bg-white font-mono absolute shadow-2xl text-2xl"
                     onClick={() => handleClick(!gameState)}>
-                    BẮT ĐẦU
+                    START GAME
                 </button>
                 :
                 <>
                     {(!showLabel && !loading) &&
                         <>
-                            <button className="btn-back border border-red-800 rounded p-3 bg-yellow-400 hover:text-red-800 border-4 hover:border-red-800 hover:bg-white font-mono absolute shadow-2xl"
+                            <button className="btn-back border-purple-800 rounded p-3 bg-white text-purple-600 hover:text-purple-800 border-4 hover:border-purple-800 hover:bg-white font-mono absolute shadow-2xl"
                                 onClick={() => handleClick(!gameState)}>
                                 BACK
                             </button>
                             <div className='btn-start-game'>
-                                <button className="btn-game-start border border-red-800 rounded p-3 px-8 bg-yellow-400 hover:text-red-800 border-4 hover:border-red-800 hover:bg-white font-mono absolute shadow-2xl"
+                                <button className="btn-game-start border-purple-800 rounded p-3 px-8 bg-white text-purple-600 hover:text-purple-800 border-4 hover:border-purple-800 hover:bg-white font-mono absolute shadow-2xl"
                                     onClick={findWinner}>
                                     START
                                 </button>
