@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { google } from 'googleapis'
+import { GOOGLE_PRIVATE_KEY, GOOGLE_CLIENT_EMAIL, GOOGLE_SHEET_ID } from '../../config'
 
 type SheetData = []
 
@@ -17,8 +18,8 @@ export default async function handler(
         // prepare auth
         const auth = new google.auth.GoogleAuth({
             credentials: {
-                client_email: process.env.GOOGLE_CLIENT_EMAIL,
-                private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n')
+                client_email: GOOGLE_CLIENT_EMAIL,
+                private_key: GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n')
             },
             scopes: [
                 'https://www.googleapis.com/auth/drive',
@@ -33,7 +34,7 @@ export default async function handler(
         })
 
         const response = await sheets.spreadsheets.values.update({
-            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            spreadsheetId: GOOGLE_SHEET_ID,
             range: 'A:C',
             valueInputOption: 'USER_ENTERED',
             requestBody: {
