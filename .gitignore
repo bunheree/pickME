@@ -39,3 +39,4 @@ package-lock.json
 yarn.lock
 
 .env
+sheetapi.json
